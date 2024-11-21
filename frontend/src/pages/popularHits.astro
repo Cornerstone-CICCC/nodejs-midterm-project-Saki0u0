@@ -1,7 +1,75 @@
 ---
 import BaseLayout from "../Layouts/BaseLayout.astro"
+import Header from '../Compornents/Header.astro'
 ---
 
 <BaseLayout pageTitle="Popular Hits">
-
+<Header/>
+<div class="container">
+  <nav class="navbar bg-body-bg">
+    <div class="container-fluid">
+      <form class="d-flex" role="search" id="search-form">
+        <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+  <div id="search-results">
+    <h1></h1>
+  </div>
+  <div class="popular-hits">
+    <h1 class="title">Popular Hits</h1>
+    <div id="result"></div> 
+  </div>
+  <aside>
+    <div id="playlist-result"></div>
+  </aside>
+</div>
 </BaseLayout>
+
+<style>
+  .container{
+    margin-top: 64px;
+  }
+
+  .popular-hits,.popular-playlist{
+    margin-left:50px;
+  }
+
+  h1{
+    color:white;
+    padding-left:20px;
+  }
+
+  #result,#search-results{
+    color:white;
+    display:flex;
+    /* overflow-x: auto; */
+    flex-wrap: wrap;
+  }
+
+  a{
+    color: white;
+    cursor: pointer;
+  }
+
+  p{
+    color:white;
+  }
+
+  #artist-album{
+    flex-wrap: wrap;
+  }
+
+  .navbar{
+    margin-bottom:40px;
+    padding-top: 40px;
+  }
+
+  .d-flex{
+    width:90%;
+    margin:0 auto;
+  }
+
+
+</style>

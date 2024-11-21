@@ -1,17 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
   const search = document.querySelector("#search")
-  const popularList = document.querySelector("#popular-list")
+  const profile= document.querySelector("#profile")
   const popularHits = document.querySelector("#popular-hits")
   const myPlayList = document.querySelector("#my-playlist")
   const myFavoriteSong = document.querySelector("#my-favorite-song")
   const Logout = document.querySelector("#logout")
 
+  // const loginFormData = new FormData(loginForm)
+  // const username = loginFormData.get('username')
+  // const usernameTitle = document.querySelector('.username')
+
+  // usernameTitle.textContent = `${ username }`
+
   search.addEventListener("click",() => {
     window.location.href = '/search';
   })
 
-  popularList.addEventListener("click",() => {
-    window.location.href = '/popularPlayList';
+  profile.addEventListener("click",() => {
+    window.location.href = '/profile';
   })
 
   popularHits.addEventListener("click",() => {
@@ -47,6 +53,4 @@ document.addEventListener('DOMContentLoaded', () => {
       alert('failed ;(');
     }
   });
-
-  
 })

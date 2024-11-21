@@ -41,7 +41,7 @@
 				console.log(JSON.stringify({ username, password })) 
 
         try {
-          const response = await fetch(`http://localhost:3000/login`, {
+          const response = await fetch(`http://localhost:3500/login`, {
               method: 'POST',
               headers: {
                   "Content-Type": 'application/json',
@@ -85,7 +85,7 @@
 		console.log(JSON.stringify({ username, name, email, password }));
 
     try{
-      const response = await fetch(`http://localhost:3000`, {
+      const response = await fetch(`http://localhost:3500`, {
 			method: 'POST',
 			headers: {
 				"Content-Type": 'application/json',

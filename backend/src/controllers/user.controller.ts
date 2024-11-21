@@ -80,7 +80,20 @@ const loginUser = async (req: Request<{}, {}, User>, res: Response) => {
 
 // Check auth profile
 const userProfile = (req: Request, res: Response) => {
-  res.status(200).send('You are allowed to view the page')
+  const userId = req.signedCookies.userId; 
+  if (!userId) {
+    return res.status(401).json({ message: 'Unauthorized: User not logged in' });
+  }
+
+  const user = userModel.findById(userId); 
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+  res.status(200).json({
+    name: user.name, 
+    username: user.username, 
+    email: user.email
+  })
 }
 
 //log out
@@ -90,6 +103,7 @@ const logoutUser = (req: Request, res: Response) => {
   
   res.status(200).json({ message: 'Logout successful' });
 };
+
 
 export default {
   getUsers,

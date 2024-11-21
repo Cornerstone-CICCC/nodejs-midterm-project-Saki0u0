@@ -84,7 +84,19 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
 });
 // Check auth profile
 const userProfile = (req, res) => {
-    res.status(200).send('You are allowed to view the page');
+    const userId = req.signedCookies.userId;
+    if (!userId) {
+        return res.status(401).json({ message: 'Unauthorized: User not logged in' });
+    }
+    const user = user_model_1.default.findById(userId);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+    res.status(200).json({
+        name: user.name,
+        username: user.username,
+        email: user.email
+    });
 };
 //log out
 const logoutUser = (req, res) => {

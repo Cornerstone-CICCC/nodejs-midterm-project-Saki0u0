@@ -1,4 +1,4 @@
-import { Request, Response, NextFunction } from 'express'
+import { Request, Response, NextFunction,} from 'express'
 
 export const cookieAuthCheck = (req: Request, res: Response, next: NextFunction) => {
   const { isAuthenticated } = req.signedCookies

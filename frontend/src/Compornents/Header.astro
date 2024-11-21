@@ -1,5 +1,18 @@
 <header>
-  <div class="logo">Play Lab</div>
+  <nav class="navbar navbar-expand-lg bg-body-bg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Play Lab</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          <a class="nav-link active" id ="logout-btn">Log Out</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 </header>
 
 <style>
@@ -9,11 +22,15 @@
     background-color:black ;
     width:100vw;
     z-index: 100;
-    padding:20px;
   }
   
   .logo{
     color:white;
     justify-items: center;
   }
+
+  .navbar .navbar-nav .nav-link, 
+.navbar .navbar-brand {
+  color: white;
+}
 </style>

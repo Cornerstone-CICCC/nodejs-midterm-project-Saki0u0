@@ -1,0 +1,61 @@
+---
+import BaseLayout from "../Layouts/BaseLayout.astro"
+---
+
+<BaseLayout pageTitle="Profile">
+  <div class="profile">
+    <div id="profile-container">
+      <p>Loading...</p>
+    </div>
+  </div>
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+  const profileContainer = document.getElementById('profile-container');
+
+  const fetchUserProfile = async () => {
+    try {
+      const response = await fetch('http://localhost:3500/auth', { 
+        method: 'GET',
+        credentials: 'include' 
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch profile data');
+      }
+
+      const userData = await response.json();
+
+      // プロフィール情報を表示
+      profileContainer.innerHTML = `
+        <h1>Profile</h1>
+        <p><strong>name: ${userData.name}</p>
+         <p><strong>username:</strong> ${userData.email}</p>
+        <p><strong>Email:</strong> ${userData.email}</p>
+        </p>
+      `;
+    } catch (error) {
+      console.error(error);
+      profileContainer.innerHTML = `<p>NO profile</p>`;
+    }
+  };
+
+  fetchUserProfile();
+});
+  </script>
+</BaseLayout>
+<style>
+  #profile-container{
+    background-color: white;
+    margin:0 auto;
+    width:50%;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .profile{
+    margin-top:100px;
+  }
+
+</style>

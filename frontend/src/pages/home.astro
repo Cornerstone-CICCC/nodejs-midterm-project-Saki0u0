@@ -3,30 +3,27 @@ import BaseLayout from "../Layouts/BaseLayout.astro"
 ---
 
 <BaseLayout pageTitle="Home">
-  <div class="home">
+  <div class="home" id ="home">
     <div class="menus">
-      <div class="icon diamond">1</div>
-      <div class="icon diamond">2</div>
-      <div class="icon diamond">3</div>
-      <div class="icon diamond">4</div>
-      <div class="icon diamond">5</div>
-      <div class="icon diamond">6</div>
-      <div class="icon diamond">7</div>
-      <div class="icon diamond">8</div>
-      <div class="icon diamond">9</div>
-      <div class="icon diamond" id="search">Search10</div>
-      <div class="icon diamond" id="popular-list">Popular Play List11</div>
-      <div class="icon diamond" id="popular-hits">Popular Hits12</div>
-      <div class="icon diamond" id="my-playlist">My Play List13</div>
-      <div class="icon diamond"  id="my-favorite-song">My Favorite Song14</div>
-      <div class="icon diamond" id="logout">Logout15</div>
-      <!-- <div class="icon diamond">7</div>
-      <div class="icon diamond">8</div>
-      <div class="icon diamond">9</div> -->
+      <div class="icon diamond"></div>
+      <div class="icon diamond"></div>
+      <div class="icon diamond"></div>
+      <div class="icon diamond"></div>
+      <div class="icon diamond"></div>
+      <div class="icon diamond" id="my-favorite-song">My Favorite Song</div>
+      <div class="icon diamond" ></div>
+      <div class="icon diamond" id="popular-hits">Popular Hits</div>
+      <div class="icon diamond" id="my-playlist">My Play List</div>
+      <div class="icon diamond" id="search"></div>
+      <div class="icon diamond" id="profile">Profile</div>
+      <div class="icon diamond" id="logout">Logout</div>
+      <div class="icon diamond"></div>
+      <div class="icon diamond" ></div>
+      <div class="icon diamond"></div>
     </div>
     <div class="welcome-message">
       <h1>Hello!</h1>
-      <p class="username">Username.</p>
+      <h1 class="username">Username.</h1>
     </div>
   </div>
 </BaseLayout>
@@ -38,6 +35,10 @@ import BaseLayout from "../Layouts/BaseLayout.astro"
   align-items: end;
   overflow: hidden;
   padding-left:50px;
+  background-image: url('./background.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   
 }
 
@@ -86,11 +87,12 @@ import BaseLayout from "../Layouts/BaseLayout.astro"
   font-size: 2rem;
   text-align: center;
   color:white;
+  margin-bottom: 80px;
 }
 
-
-
-
+.welcome-message h1{
+  margin:0;
+}
   
 </style>
 
